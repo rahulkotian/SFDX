@@ -11,8 +11,15 @@
             <Lightning:layoutItem flexibility="auto" size="4" padding="horizontal-small">
                 <Lightning:button variant="brand" label="Search" title="" onclick="{! c.handleClick }" class="c-btn" />
             </Lightning:layoutItem>
-            <Lightning:layoutItem flexibility="auto" padding="around-large" size="6">
-                <p> You searched for </p>
+            <Lightning:layoutItem flexibility="auto" padding="horizontal-small" size="8">
+                <aura:iteration items="{!v.data.items}" var="cardItem">
+                    <Lightning:card title="{!cardItem.snippet.title}">
+                        <p class="slds-p-horizontal_small"> {!cardItem.snippet.description} </p>
+                        <div class="slds-media__figure"> <a href="{!'https://www.youtube.com/watch?v='+cardItem.id.videoId}"
+                                target="_blank"> <img src="{!cardItem.snippet.thumbnails.high.url}" style="height:100px;"
+                                    alt="Placeholder" /> </a> </div>
+                    </Lightning:card>
+                </aura:iteration>
             </Lightning:layoutItem>
         </Lightning:layout>
     </div>
