@@ -1,0 +1,19 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" access="global">
+    <div class="c-container">
+        <Lightning:layout multipleRows="true" horizontalAlign="center" verticalAlign="center">
+            <Lightning:layoutItem flexibility="auto" size="6">
+                <div class="slds-form-element"> <label class="slds-form-element__label" for="text-input-id-1">Enter
+                        search term</label>
+                    <div class="slds-form-element__control"> <input type="search" id="text-input-id-1" class="slds-input"
+                            placeholder="Enter Search Term" aura:id="searchBox" /> </div>
+                </div>
+            </Lightning:layoutItem>
+            <Lightning:layoutItem flexibility="auto" size="4" padding="horizontal-small">
+                <Lightning:button variant="brand" label="Search" title="" onclick="{! c.handleClick }" class="c-btn" />
+            </Lightning:layoutItem>
+            <Lightning:layoutItem flexibility="auto" padding="around-large" size="6">
+                <p> You searched for </p>
+            </Lightning:layoutItem>
+        </Lightning:layout>
+    </div>
+</aura:component>
